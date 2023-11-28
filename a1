@@ -1,0 +1,31 @@
+def bubble_sort(arr):
+    n = len(arr)
+    
+    # Flag para verificar se houve alguma troca durante a iteração
+    troca = True
+    
+    # Loop principal
+    while troca:
+        # Nenhuma troca foi feita ainda nesta iteração
+        troca = False
+        
+        # Itera sobre o vetor
+        for i in range(n - 1):
+            # Compara elementos adjacentes
+            if arr[i] > arr[i + 1]:
+                # Troca os elementos se estiverem fora de ordem
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                # Marca que uma troca foi feita
+                troca = True
+        
+        # Reduz o tamanho da busca a cada iteração, pois o maior elemento já está no final
+        n -= 1
+
+# Vetor inicial
+vetor = [9, 5, 7, 2, 6, 1, 3, 0, 4, 8]
+
+# Aplica o Bubble Sort para ordenar o vetor
+bubble_sort(vetor)
+
+# Imprime o vetor ordenado
+print("Vetor ordenado:", vetor)
